@@ -1,5 +1,6 @@
 import express from 'express'
 import cors from 'cors'
+import cookieParser from 'cookie-parser'
 import { registerAuthRoutes } from './modules/auth/auth.controller'
 import { isLogin } from './modules/auth/auth.middleware'
 
@@ -8,7 +9,12 @@ export function initWebServer() {
     const app = express()
     
     // Utilise le plugin CORS
-    app.use(cors())
+    app.use(cors({
+        credentials: true,
+    }))
+    
+    // lire les cookies
+    app.use(cookieParser())
     
     // permet de décoder le contenu des requetes http (de type JSON)
     app.use(express.json())

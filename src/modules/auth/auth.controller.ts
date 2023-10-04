@@ -11,12 +11,21 @@ export function registerAuthRoutes(app: Express) {
         
         // on call le service auth.register
         const result = await register(req.body)
+        
+        // on set un cookie si on a un token dans le result
+        if (result.token) {
+            res.cookie('token', result.token, { expires: new Date(+new Date() + 1000000000), sameSite: 'none' })
+        }
         // on reponds a la requete http avec le result
         res.json(result)
     })
     
     app.post('/auth/login', async (req, res) => {
         const result = await login(req.body)
+        // on set un cookie si on a un token dans le result
+        if (result.token) {
+            res.cookie('token', result.token, { expires: new Date(+new Date() + 1000000000), sameSite: 'none' })
+        }
         res.json(result)
     })
     
