@@ -5,6 +5,8 @@
   "scripts": {
     "start": "node dist/out-tsc/index.js",
     "dev": "tsc-alias -p tsconfig.json --watch & tsc-watch --noClear -p \"./tsconfig.json\" --onSuccess \"node dist/index.js\"",
+    "dev:win": "tsc-watch --noClear -p \"./tsconfig.json\" --onSuccess \"npm run dev:winnext\"",
+    "dev:winnext": "tsc-alias -p src/tsconfig.json && node dist/index.js",
     "build": "tsc && tsc-alias -p tsconfig.json",
     "test": "jest"
   },
