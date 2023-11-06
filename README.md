@@ -27,6 +27,7 @@ Lancer le projet en prod
 npm run start
 ```
 
+--------
 
 L'idéal serait de créer de nouveaux modules pour faire le projet
 
