@@ -7,9 +7,14 @@ Installer les dependances
 npm i
 ```
 
-Lancer en dev
+Lancer en dev (Linux et Macos)
 ```
 npm run dev
+```
+
+Lancer en dev (Windows)
+```
+npm run dev:win
 ```
 
 Build le projet
