@@ -1,5 +1,7 @@
 # Mini Auth Starter
 
+## Regardez les différentes branches pour voir différentes choses, comme les websockets
+
 ## Setup
 
 Copier coller le fichier `.env.example` env `.env`
