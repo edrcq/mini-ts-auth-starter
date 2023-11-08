@@ -11,7 +11,7 @@ export function registerTodoRoutes(app: Express) {
         res.json({ todo })
     })
     
-    app.get('/todos', async (req: Request, res: Response) => {
+    app.get('/todos', async (_req: Request, res: Response) => {
         const todos = await getAll()
         res.json(todos)
     })
