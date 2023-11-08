@@ -6,6 +6,7 @@ import { registerAuthRoutes } from './modules/auth/auth.controller'
 import { isLogin } from './modules/auth/auth.middleware'
 import { initSocketio } from './websocket'
 import { registerUploadRoutes } from './modules/images/image.controller'
+import { registerTodoRoutes } from './modules/todo/todo.controller'
 
 export function initWebServer() {
     // Creation du serveur http
@@ -35,6 +36,7 @@ export function initWebServer() {
     // On enregistre nos controllers
     registerAuthRoutes(app)
     registerUploadRoutes(app)
+    registerTodoRoutes(app)
     
     // On ecoute sur le port configuré avec le .env
     server.listen(process.env.NODE_PORT, () => {
