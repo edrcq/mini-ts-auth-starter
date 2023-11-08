@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser'
 import { registerAuthRoutes } from './modules/auth/auth.controller'
 import { isLogin } from './modules/auth/auth.middleware'
 import { initSocketio } from './websocket'
+import { registerUploadRoutes } from './modules/images/image.controller'
 
 export function initWebServer() {
     // Creation du serveur http
@@ -33,6 +34,7 @@ export function initWebServer() {
 
     // On enregistre nos controllers
     registerAuthRoutes(app)
+    registerUploadRoutes(app)
     
     // On ecoute sur le port configuré avec le .env
     server.listen(process.env.NODE_PORT, () => {

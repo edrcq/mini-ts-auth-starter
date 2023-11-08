@@ -6,5 +6,11 @@ declare global {
       export interface Request {
         user?: WithId<SimpleUser> | null;
       }
+      
+      namespace Multer {
+        export interface File {
+          key: string | null
+        }
+      }
     }
 }
