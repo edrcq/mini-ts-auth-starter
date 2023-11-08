@@ -3,3 +3,7 @@ export interface Todo {
     createdAt: Date
     done: boolean
 }
+
+export interface BodyCreateTodo {
+    label: string
+}
